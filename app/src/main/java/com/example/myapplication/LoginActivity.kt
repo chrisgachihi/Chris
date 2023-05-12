@@ -7,8 +7,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.google.firebase.auth.EmailAuthProvider
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
     lateinit var edtEmail: EditText
     lateinit var edtPassword: EditText
     lateinit var btnLogin: Button
@@ -66,4 +69,3 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
-}

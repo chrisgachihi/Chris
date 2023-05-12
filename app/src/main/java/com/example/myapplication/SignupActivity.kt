@@ -7,8 +7,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 
 class SignupActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
     lateinit var edtFName: EditText
     lateinit var edtLName: EditText
     lateinit var edtEmail: EditText
@@ -42,7 +44,7 @@ class SignupActivity : AppCompatActivity() {
 
                     auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                         if (it.isSuccessful){
-                            val intent = Intent(this,LoginActivity::class.java)
+                            val intent = Intent(this,JoinActivity::class.java)
                             startActivity(intent)
                         }else{
                             Toast.makeText(this, it.exception.toString(),
